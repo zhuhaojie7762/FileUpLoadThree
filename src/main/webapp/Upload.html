@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!-- 上传成功 -->
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <script src="resource/js/jquery.min.js" type="text/javascript"></script>
+    <script src="resource/js/ajaxfileupload.js" type="text/javascript"></script>
+</head>
+<body>
+<input type="file" id="file1" name="file" onchange="ajaxFileUpload()"/>
+<script>
+    function ajaxFileUpload() {
+        $.ajaxFileUpload(
+            {
+                url: 'ajaxTest/upload', //用于文件上传的服务器端请求地址
+                secureuri: false, //是否需要安全协议，一般设置为false
+                fileElementId: 'file1', //文件上传域的ID
+                dataType: 'json', //返回值类型 一般设置为json
+                success: function (data) {
+                    //服务器成功响应处理函数
+                    if (data.success) {
+                        alert("上传路径:" + data.message);
+
+                    } else {
+                        alert("上传失败");
+                    }
+                },
+                error: function (data) {
+                    //服务器响应失败处理函数
+                    alert('失败!,data:' + data);
+                }
+            }
+        )
+        return false;
+    }
+</script>
+</body>
+</html>
