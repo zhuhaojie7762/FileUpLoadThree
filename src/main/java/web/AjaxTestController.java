@@ -67,7 +67,7 @@ public class AjaxTestController {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        String s = request.getContextPath() + "/upload/" + fileName;
+        String s = request.getContextPath() +File.separator+ "upload"+File.separator + fileName;
 
         Data data = new Data();
         data.setMessage(s);
