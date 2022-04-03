@@ -1,3 +1,4 @@
 上传成功
 http://localhost:8080/FileUpLoadThree/Upload.html
+Ajax向后端传递参数操作
 http://localhost:8080/FileUpLoadThree/ajaxTest/main
