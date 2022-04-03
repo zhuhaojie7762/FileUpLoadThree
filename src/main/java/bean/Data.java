@@ -8,7 +8,6 @@ import lombok.ToString;
 @Getter
 @Setter
 public class Data {
-   
     private boolean success;
     private String message;
 }

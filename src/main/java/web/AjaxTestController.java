@@ -56,8 +56,8 @@ public class AjaxTestController {
         File targetFile = new File(path, fileName);
         if (!targetFile.exists()) {
             boolean result = targetFile.mkdirs();
-            if(!result){
-               return "创建父路径失败";
+            if (!result) {
+                return "创建父路径失败";
             }
         }
 
@@ -67,8 +67,7 @@ public class AjaxTestController {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        String s = request.getContextPath() +File.separator+ "upload"+File.separator + fileName;
-
+        String s = request.getContextPath() + File.separator + "upload" + File.separator + fileName;
         Data data = new Data();
         data.setMessage(s);
         data.setSuccess(true);
