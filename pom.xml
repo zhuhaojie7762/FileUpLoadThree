@@ -10,7 +10,6 @@
     <packaging>war</packaging>
 
     <name>FileUpLoadThree</name>
-    <!-- FIXME change it to the project's website -->
     <url>http://www.example.com</url>
 
     <properties>
@@ -516,20 +515,9 @@
             <version>3.0.1-b11</version>
         </dependency>
         <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-validator-cdi</artifactId>
-            <version>6.0.18.Final</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.hibernate.validator</groupId>
-                    <artifactId>hibernate-validator</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-        <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.16.10</version>
+            <version>1.18.22</version>
         </dependency>
         <!-- mybatis ORM框架 -->
         <dependency>
