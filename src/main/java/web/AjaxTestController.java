@@ -1,6 +1,7 @@
 package web;
 
 import java.io.File;
+import java.io.IOException;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
@@ -46,7 +47,7 @@ public class AjaxTestController {
 
     @RequestMapping(value = "upload")
     @ResponseBody
-    public String upload(HttpServletRequest request, @RequestParam(value = "file") MultipartFile file) {
+    public String upload(HttpServletRequest request, @RequestParam(value = "file") MultipartFile file) throws IOException {
         System.out.println("开始");
         String path = request.getSession().getServletContext().getRealPath("/upload");
         String fileName = file.getOriginalFilename();
@@ -59,13 +60,9 @@ public class AjaxTestController {
                 return "创建父路径失败";
             }
         }
-
-        // 保存
-        try {
-            file.transferTo(targetFile);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        //开始上传
+        file.transferTo(targetFile);
+        //返回数据
         String s = request.getContextPath() + File.separator + "upload" + File.separator + fileName;
         Data data = new Data();
         data.setMessage(s);
