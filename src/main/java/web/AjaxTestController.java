@@ -50,7 +50,6 @@ public class AjaxTestController {
         System.out.println("开始");
         String path = request.getSession().getServletContext().getRealPath("/upload");
         String fileName = file.getOriginalFilename();
-        // String fileName = new Date().getTime()+".jpg";
         System.out.println(path);
         assert fileName != null;
         File targetFile = new File(path, fileName);
